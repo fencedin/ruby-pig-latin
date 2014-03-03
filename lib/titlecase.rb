@@ -1,15 +1,16 @@
-def titlecase(inputted_sentence)
-  inputted_sentence = inputted_sentence.downcase
-  new_sentence = []
-  conjunction = ["the", "and", "but", "or", "yet", "for", "so", "there"]
-  inputted_word = inputted_sentence.split(" ")
-  inputted_word.each do |x| 
-    if !conjunction.include?(x) 
-      new_sentence << x.capitalize!
-    else new_sentence << x
+def titlecase(inputted_phrase)
+  inputted_phrase.downcase!
+  title_case_phrase = []
+  conjunctions = ["the", "and", "but", "or", "yet", "for", "so", "there"]
+  words = inputted_phrase.split(" ")
+  words.each do |word| 
+    if !conjunctions.include?(word)
+      title_case_phrase << word.capitalize!
+    else
+      title_case_phrase << word
     end
   end
-  new_sentence.join(" ").upcase[0]+new_sentence.join(" ")[1..-1]
+  title_case_phrase.join(" ").upcase[0] + title_case_phrase.join(" ")[1..-1]
 end
 
 # titlecase("and the H9elFIH ct")
