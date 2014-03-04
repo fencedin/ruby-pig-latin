@@ -1,17 +1,17 @@
-def titlecase(inputted_phrase)
-  inputted_phrase.downcase!
-  title_case_phrase = []
-  conjunctions = ["the", "and", "but", "or", "yet", "for", "so", "there"]
-  words = inputted_phrase.split(" ")
-  words.each do |word| 
-    if !conjunctions.include?(word)
-      title_case_phrase << word.capitalize!
-    else
-      title_case_phrase << word
+def piglatin(inputted_phrase)
+  word_array = inputted_phrase.downcase.split("")
+  vowels = ["a", "e", "i", "o", "u"]
+  end_of_array = []
+  start_of_array = []
+  word_array.map do |x|
+    unless vowels.index(x)
+      end_of_array << x
+    else 
+      start_of_array << x
     end
   end
-  title_case_phrase.join(" ").upcase[0] + title_case_phrase.join(" ")[1..-1]
+  puts start_of_array.join("") + " " + end_of_array.join("")
 end
 
-# titlecase("and the H9elFIH ct")
-
+piglatin("place")
+# aceplay
